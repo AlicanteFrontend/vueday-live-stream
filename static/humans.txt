@@ -1,0 +1,23 @@
+# humanstxt.org
+# The humans responsible & technology colophon
+
+# TEAM
+
+Co-founder, Design, Code: Aarón García
+Site: https://aarongarciah.com/
+Twitter: @aarongarciah
+Location: Alicante, Spain
+
+Co-founder: Alex Jover
+Site: https://alexjoverm.github.io/
+Twitter: @alexjoverm
+Location: Alicante, Spain
+
+Co-founder: Álvaro Yuste
+Site: http://yuste.info/
+Twitter: @AlvYuste
+Location: Alicante, Spain
+
+# TECHNOLOGY COLOPHON
+Standards: HTML5, CSS3, JavaScript
+Software: GitHub, Netlify

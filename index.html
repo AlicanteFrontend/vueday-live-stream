@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>
+      Live Streaming Vue Day 2019 | May 31 in Alicante | Brought to you by
+      Alicante Frontend
+    </title>
+    <meta
+      name="description"
+      content="The 2nd edition of Vue Day is here: a whole day to learn about your favorite framework from local, national and international speakers. See you on Friday May 31 at Panoramis Cinema, next to the beautiful Port of Alicante. Brought to you by Alicante Frontend."
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="author"
+      content="Aarón García Hervás, @aarongarciah, https://aarongarciah.com"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./static/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./static/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./static/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="./static/safari-pinned-tab.svg"
+      color="#26a070"
+    />
+    <link rel="shortcut icon" href="./static/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-config" content="./static/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta itemprop="name" content="Vue Day 2019 | May 31 in Alicante" />
+    <meta
+      itemprop="description"
+      content="The 2nd edition of Vue Day is here: a whole day to learn about your favorite framework from local, national and international speakers. See you on Friday May 31 at Panoramis Cinema, next to the beautiful Port of Alicante. Brought to you by Alicante Frontend."
+    />
+    <meta itemprop="image" content="./static/vue-day.jpg" />
+
+    <meta property="og:title" content="Vue Day 2019 | May 31 in Alicante" />
+    <meta
+      property="og:description"
+      content="The 2nd edition of Vue Day is here: a whole day to learn about your favorite framework from local, national and international speakers. See you on Friday May 31 at Panoramis Cinema, next to the beautiful Port of Alicante. Brought to you by Alicante Frontend."
+    />
+    <meta property="og:image" content="./static/vue-day.jpg" />
+    <meta property="og:image:alt" content="Vue Day 2019 logo" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://vueday.org/" />
+    <meta property="og:site_name" content="Vue Day 2019" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Vue Day 2019 | May 31 in Alicante" />
+    <meta
+      name="twitter:description"
+      content="The 2nd edition of Vue Day is here: a whole day to learn about your favorite framework. See you on Friday May 31 at Panoramis Cinema, next to the beautiful Port of Alicante. Brought to you by Alicante Frontend."
+    />
+    <meta name="twitter:site" content="@VueDay" />
+    <meta name="twitter:creator" content="@VueDay" />
+    <meta name="twitter:image" content="./static/vue-day-twitter.jpg" />
+    <meta name="twitter:image:alt" content="Vue Day 2019 logo" />
+
+    <link
+      href="https://unpkg.com/video.js@7.5.4/dist/video-js.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+          'Segoe UI Symbol';
+        color: #02111b;
+      }
+
+      #video {
+        display: none;
+        width: 100%;
+        height: 100%;
+      }
+
+      #video:focus {
+        outline: none;
+      }
+
+      body.is-on #video {
+        display: block;
+      }
+
+      #video .vjs-big-play-button {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      #coming-soon {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-size: 1.4rem;
+      }
+
+      #logo {
+        display: inline-block;
+        max-width: 180px;
+        margin-top: 2rem;
+      }
+
+      body.is-off #coming-soon {
+        display: flex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="coming-soon">
+      <span
+        >The <strong>Vue Day</strong> streaming will start at Friday,
+        <span class="nowrap"
+          ><strong>May 31 at 8:45 am</strong> (CEST)</span
+        ></span
+      >
+      <img id="logo" src="static/vue-day-logo.svg" alt="Vue Day Logo" />
+    </div>
+    <video
+      id="video"
+      class="video-js vjs-default-skin"
+      controls
+      preload="auto"
+      width="640"
+      height="268"
+      data-setup="{}"
+    >
+      <source
+        src="http://134.255.215.123:8080/hls/vuedayalc2019.m3u8"
+        type="application/x-mpegURL"
+      />
+    </video>
+
+    <script src="https://unpkg.com/video.js@7.5.4/dist/video.min.js"></script>
+    <script src="https://unpkg.com/@videojs/http-streaming@1.10.2/dist/videojs-http-streaming.min.js"></script>
+    <script>
+      var interval = null;
+      var pageLoadedAt = Date.now();
+      var startAt = Date.UTC(2019, 4, 31, 6, 40);
+      var $body = document.querySelector('body');
+      var $video = document.querySelector('#video video');
+
+      function startStreaming() {
+        var now = Date.now();
+
+        if (pageLoadedAt > startAt || window.location.hash === '#force') {
+          clearInterval(interval);
+          $body.classList.remove('is-off');
+          $body.classList.add('is-on');
+          $video.play();
+        } else if (now >= startAt) {
+          clearInterval(interval);
+          window.location.reload();
+        } else {
+          $body.classList.remove('is-on');
+          $body.classList.add('is-off');
+        }
+      }
+
+      interval = setInterval(startStreaming, 15000);
+      startStreaming();
+    </script>
+    <script
+      src="https://www.googletagmanager.com/gtag/js?id=UA-87037918-2"
+      async="async"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-87037918-2');
+    </script>
+  </body>
+</html>
